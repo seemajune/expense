@@ -1,0 +1,16 @@
+.app__container {
+    display: grid;
+    background: #F0F4F6;
+    width: 100vw;
+    min-height: 100vh;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+
+    h1 {
+        color: #D91975;
+    }
+}
+
+// todo: add styles.css for app root, overide html, body
+//     margin: 0;
+//     padding: 0;
