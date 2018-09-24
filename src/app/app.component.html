@@ -1,10 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="app__container">
-  <h1>
-    {{ title }}
-  </h1>
-  <div *ngFor="let expense of expenses">
-    <app-expense-details [expense]="expense">
-    </app-expense-details>
-  </div>
+<div style="text-align:center">
+  <h1>{{ title }}</h1>
+  <router-outlet></router-outlet>
 </div>
