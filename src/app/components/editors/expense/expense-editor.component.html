@@ -1,0 +1,15 @@
+<div class="expense__form">
+    <form [formGroup]="expenseForm" (ngSubmit)="updateExpense(expense)">
+      <label>
+        comment:
+        <input type="text" formControlName="comment">
+      </label>
+      <label>
+        receipts:
+        <input type="text" formControlName="receipts">
+      </label>
+      <button type="submit" [disabled]="!expenseForm.valid">Submit</button>
+    </form>
+</div>
+
+<!-- todo: add validators <button type="submit" [disabled]="!expenseForm.valid">Submit</button> -->

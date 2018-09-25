@@ -1,9 +1,5 @@
-import { Component,
-    OnInit,
-    Input,
-    Output,
-    EventEmitter 
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FilterPipe } from 'ngx-filter-pipe';
 
 import { Expense } from '../../../models';
 
@@ -12,22 +8,24 @@ import { Expense } from '../../../models';
     templateUrl: './expense-list.component.html',
     styleUrls: ['./expense-list.component.scss']
 })
-export class ExpenseListComponent implements OnInit {
+export class ExpenseListComponent {
 
     @Input() expenses: Expense[];
     @Input() loading: boolean;
     @Input() error: any;
-
-    @Output() idClicked = new EventEmitter();
-
-    constructor() { }
-
-    ngOnInit() {
+       
+    expenseFilter = {
+        merchant: ''
     }
 
-    onIdClicked(id: string) {
-        console.log(`ExpenseListComponent/onIdClicked, id = ${id}`);
-        this.idClicked.emit(id);
+    userFilter = {
+        user: {
+            last: ''
+        }
+    }
+
+    constructor(private filterPipe: FilterPipe) { 
+        // console.log(filterPipe.transform(this.expenses, { user: ''}));
     }
 
 }

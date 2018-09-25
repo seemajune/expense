@@ -33,7 +33,7 @@ export const selectExpensesList = () =>
 // get an expense detail by id from the list of expenses
 export const selectExpenseById = (id: string) =>
     createSelector(
-        selectAllExpenses,
+        selectAllExpenses, // add new selector to grab just detail from state
         (allExpenses: Expense[]) => {
             if (!allExpenses) {
                 return null;

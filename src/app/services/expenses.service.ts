@@ -57,7 +57,7 @@ export class DataService {
                 map((result: any) => {
                     this.testData = result;
                     console.log(this.testData);
-                    return result;
+                    return [result];
                 })
             );
     }
@@ -65,12 +65,12 @@ export class DataService {
     // used for the addition of comments, but can update any Expense field
     updateExpense(id: string, expense: Expense): Observable<Expense[]> {
         this.url = `${this.expensesUrl}/${id}`;
-
+        console.log("updating:  ", expense);
         return this.http
             .post<Expense>(this.url, expense, this.postJsonHttpOptions)
             .pipe(
                 map((result: any) => {
-                    return result;
+                    return [result];
                 })
             );
     }

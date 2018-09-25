@@ -1,0 +1,19 @@
+<div class="expense__details">
+    <h2>expense detaills</h2>
+    <div class="expense__details__list">
+        <ul *ngIf="expense">
+            <li><b>id:</b><span>{{expense.id}}</span></li>
+            <li><b>date:</b><span>{{expense.date | date}}</span></li>
+            <li><b>amount:</b><span>{{expense.amount.value | currency: expense.amount.currency}}</span></li>
+            <li><b>merchant:</b><span>{{expense.merchant}}</span></li>
+            <li><b>category:</b> <span>{{expense.category ? expense.category : 'uncategorized'}}</span></li>
+            <li><b>user:</b>
+                <span>{{expense.user.first | titlecase}} {{expense.user.last | titlecase}}</span>
+            </li>
+            <li><b>email:</b>
+                <span>{{expense.user.email}}</span>
+            </li>
+            <li><b>comment:</b><span>{{expense.comment ? expense.comment : 'none'}}</span></li>
+        </ul>
+    </div>
+</div>

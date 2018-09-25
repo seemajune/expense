@@ -10,7 +10,8 @@ import {
 
 @Component({
     selector: 'app-expenses',
-    templateUrl: './expenses.component.html'
+    templateUrl: './expenses.component.html',
+    
 })
 export class ExpensesComponent implements OnInit {
     expenseItems$: Observable<Expense[]>;
@@ -35,9 +36,5 @@ export class ExpensesComponent implements OnInit {
         this.store$.dispatch(
             new ExpensesStoreActions.RequestExpensesListAction()
         );
-    }
-
-    onIdClicked(id: string) {
-        console.log(`id = ${id}`);
     }
 }
