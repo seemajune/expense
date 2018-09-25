@@ -1,8 +1,11 @@
 <div class="expenses__list">
     <h2>expense list</h2>
+    <span>filter by:</span>
     <div class="expenses__list__filters">
-        <input type="text" [(ngModel)]="expenseFilter.merchant" placeholder="filter by merchant">
-        <input type="text" [(ngModel)]="userFilter.user.last" placeholder="filter by last name">
+        <input type="text" [(ngModel)]="expenseFilter.category" placeholder="category">
+        <input type="text" [(ngModel)]="expenseFilter.merchant" placeholder="merchant">
+        <input type="text" [(ngModel)]="userFilter.user.first" placeholder="first name">
+        <input type="text" [(ngModel)]="userFilter.user.last" placeholder="last name">
     </div>
     <ul>
         <li 

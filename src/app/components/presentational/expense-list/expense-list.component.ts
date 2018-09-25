@@ -15,12 +15,14 @@ export class ExpenseListComponent {
     @Input() error: any;
        
     expenseFilter = {
-        merchant: ''
+        merchant: '',
+        category: '',
     }
 
     userFilter = {
         user: {
-            last: ''
+            last: '',
+            first: ''
         }
     }
 
