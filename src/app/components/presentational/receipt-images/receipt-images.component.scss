@@ -1,0 +1,25 @@
+.expense__receipts {
+    display: grid;
+    grid-template-areas: "expense__receipts__toggler" 
+    "expense__receipts__images";
+    grid-template-rows: 30px auto;
+
+       &__toggler {
+        grid-row: 1;
+        justify-self: center;
+    }
+
+    &__images {
+        grid-row-start: 2;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+}

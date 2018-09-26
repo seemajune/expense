@@ -10,8 +10,7 @@ import {
 
 @Component({
     selector: 'app-expenses',
-    templateUrl: './expenses.component.html',
-    
+    templateUrl: './expenses.component.html'
 })
 export class ExpensesComponent implements OnInit {
     expenseItems$: Observable<Expense[]>;

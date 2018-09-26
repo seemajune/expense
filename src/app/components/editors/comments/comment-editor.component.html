@@ -1,0 +1,10 @@
+<div class="comment__form">
+    <form [formGroup]="commentForm" (ngSubmit)="updateExpense(expense)">
+      <label>
+        comment:
+        <input type="text" 
+          formControlName="comment">
+      </label>
+      <button type="submit" [disabled]="!commentForm.valid">Submit</button>
+    </form>
+</div>

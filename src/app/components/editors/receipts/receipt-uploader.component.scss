@@ -1,0 +1,25 @@
+$button-color: #81F0BB;
+$button-disabled-color: #cac9c9;
+
+.receipts__form {
+    padding: 0 2em;
+    form {
+        display: grid;
+        grid-template-areas: "label" "input" "button";
+        grid-template-columns: 200px 100px;
+
+        button {
+            border-radius: 4px;
+            background-color: $button-color;
+
+            &:disabled {
+                background-color: $button-disabled-color;
+            }
+        }
+
+        label, button {
+            font-size: 14px;
+        }
+    }
+
+}

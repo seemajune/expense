@@ -9,10 +9,18 @@ $secondary-color: #636363;
     background: #F0F4F6;
     width: 100vw;
     min-height: 100vh;
+    padding-bottom: 2em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: $secondary-color;
 
     .expense__header h1 {
         color: $primary-color;
+    }
+    
+}
+
+@media only screen and (max-width: 728px) {
+    .expenses__container {
+        padding: 1em;
     }
 }

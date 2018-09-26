@@ -80,7 +80,7 @@ export class UpdateExpenseDetailFailureAction implements Action {
 export class UploadReceiptsAction implements Action {
     readonly type = ActionTypes.UPLOAD_RECEIPTS;
 
-    constructor(public payload: { id: string, receipts: FormData }) {}
+    constructor(public payload: { id: string, receipts: any }) {}
 }
 
 export class UploadStartAction implements Action {

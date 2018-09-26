@@ -1,8 +1,6 @@
 import {
     HttpClient,
-    HttpHeaders,
-    HttpRequest,
-    HttpEvent
+    HttpHeaders
 } from '@angular/common/http';
 
 import {
@@ -23,7 +21,6 @@ import { Expense, ExpensesResponse, ExpenseResponse } from '../models';
 })
 
 export class DataService {
-    private testData;
     private API_BASE_URL = 'http://localhost:3000';
     private expensesUrl = `${this.API_BASE_URL}/expenses`;
 
@@ -42,8 +39,6 @@ export class DataService {
             .get<ExpensesResponse>(this.expensesUrl)
             .pipe(
                 map((result: any) => {
-                    this.testData = result;
-                    console.log(this.testData);
                     return result.expenses;
                 })
             );
@@ -55,8 +50,6 @@ export class DataService {
             .get<ExpenseResponse>(this.url)
             .pipe(
                 map((result: any) => {
-                    this.testData = result;
-                    console.log(this.testData);
                     return [result];
                 })
             );
@@ -65,7 +58,6 @@ export class DataService {
     // used for the addition of comments, but can update any Expense field
     updateExpense(id: string, expense: Expense): Observable<Expense[]> {
         this.url = `${this.expensesUrl}/${id}`;
-        console.log("updating:  ", expense);
         return this.http
             .post<Expense>(this.url, expense, this.postJsonHttpOptions)
             .pipe(
@@ -75,18 +67,18 @@ export class DataService {
             );
     }
 
-    uploadReceipts(id: string, formData: FormData): Observable<HttpEvent<any>> {
+    uploadReceipts(id: string, payload: any): Observable<any> {
         this.url = `${this.expensesUrl}/${id}/receipts`;
 
-        // Prepare request options
-        const requestHeader: HttpHeaders = new HttpHeaders();
+        const formData = new FormData();
+        formData.append('receipt', payload, payload.name);
 
-        const options: any = {
-            reportProgress: true,
-            headers: requestHeader
-        };
-        // Prepare request
-        const req = new HttpRequest<FormData>('POST', this.url, formData, options);
-        return this.http.request(req);
+        return this.http
+            .post(this.url, formData)
+            .pipe(
+                map((result: any) => {
+                    return [result];
+                })
+            );
     }
 }

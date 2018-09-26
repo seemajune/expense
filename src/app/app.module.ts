@@ -11,9 +11,11 @@ import { ExpensesComponent } from './components/containers/expenses/expenses.com
 import { ExpenseListComponent } from './components/presentational/expense-list/expense-list.component';
 import { ExpenseDetailsComponent } from './components/presentational/expense-details/expense-details.component';
 import { ExpenseComponent } from './components/containers/expense/expense.component';
-import { ExpenseEditorComponent } from './components/editors/expense/expense-editor.component';
+import { CommentEditorComponent } from './components/editors/comments/comment-editor.component';
 
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { ReceiptUploaderComponent } from './components/editors/receipts/receipt-uploader.component';
+import { ReceiptImagesComponent } from './components/presentational/receipt-images/receipt-images.component';
 
 
 const routes: Routes = [
@@ -44,7 +46,9 @@ const routes: Routes = [
         ExpenseListComponent,
         ExpenseDetailsComponent,
         ExpenseComponent,
-        ExpenseEditorComponent
+        CommentEditorComponent,
+        ReceiptUploaderComponent,
+        ReceiptImagesComponent
     ],
     imports: [
         BrowserModule,

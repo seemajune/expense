@@ -1,0 +1,9 @@
+<div class="receipts__form">
+        <form [formGroup]="uploadForm" novalidate (ngSubmit)="uploadReceipt()" enctype="multipart/form-data">
+          <label>receipts:
+              <input type="file" name="receipt" (change)="onFileChange($event)" />
+          </label>
+          <button type="submit" 
+            [disabled]="isAwaitingFileSeclection">Upload</button>
+      </form>
+</div>

@@ -1,12 +1,35 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
 $quinary-color: #2C0C64;
+$link-color: #0427E3;
 
 .expense__details {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+
+    &__link {
+        display: flex;
+        flex-direction: row;
+
+        [class*="fontawesome-"]:before {
+            font-family: 'FontAwesome', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: $link-color;
+
+            span {
+                padding-right: 0.3em;
+            }
+        }
+    }
 
     &__list {
+        align-items: center;
+        justify-content: center;
+        
         ul, li {
             padding: 0;
             margin: 0;

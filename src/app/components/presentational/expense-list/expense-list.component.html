@@ -1,16 +1,18 @@
 <div class="expenses__list">
     <h2>expense list</h2>
-    <span>filter by:</span>
     <div class="expenses__list__filters">
+        <span>filter:</span>
         <input type="text" [(ngModel)]="expenseFilter.category" placeholder="category">
         <input type="text" [(ngModel)]="expenseFilter.merchant" placeholder="merchant">
         <input type="text" [(ngModel)]="userFilter.user.first" placeholder="first name">
         <input type="text" [(ngModel)]="userFilter.user.last" placeholder="last name">
     </div>
     <ul>
-        <li 
-            *ngFor="let expense of expenses | filterBy: expenseFilter | filterBy: userFilter">
-            <a [routerLink]="['/expenses', expense.id]"><span>{{ expense.date | date}}</span></a>
+        <li *ngFor="let expense of expenses | filterBy: expenseFilter | filterBy: userFilter">
+            <span>{{ expense.date | date}}</span>
+            <span>{{ expense.merchant}}</span>
+            <span>{{ expense.amount.value | currency:expense.amount.currency}}</span>
+            <a [routerLink]="['/expenses', expense.id]">view details</a>
         </li>
     </ul>
  </div>

@@ -79,7 +79,7 @@ export class ExpenseStoreEffects {
 
     // UPLOAD RECEIPTS
     @Effect()
-    uploadEffect$: Observable<Action> = this.actions$.pipe(
+    uploadReceiptsEffect$: Observable<Action> = this.actions$.pipe(
         ofType<featureActions.UploadReceiptsAction>(
             featureActions.ActionTypes.UPLOAD_RECEIPTS
         ),

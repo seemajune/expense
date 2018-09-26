@@ -16,7 +16,6 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-expense',
   templateUrl: './expense.component.html',
-  styleUrls: ['./expense.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExpenseComponent implements OnInit {

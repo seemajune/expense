@@ -4,11 +4,13 @@ $quaternary-color: #F081B6;
 .expenses__list {
     display: flex;
     flex-direction: column;
-    align-items: center;
 
-    &__filters {
-        input {
-            margin: 1em;
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        li:nth-child(odd) {
+            background: #fff;
         }
     }
 
@@ -20,9 +22,15 @@ $quaternary-color: #F081B6;
     }
 
     li {
-        padding-bottom: 0.5em;
+        display: flex;                   
+        flex-direction: row;  
+        justify-content: center;
+        width: 100%;
+        padding: 1em 0;
+        vertical-align: middle;
 
         a {
+            padding-left: 0.8em;
             text-decoration: none;
             color: $tertiary-color;
 
@@ -31,5 +39,34 @@ $quaternary-color: #F081B6;
             }
         }
 
+        span {
+            flex: 1; 
+            white-space: nowrap;
+        }
+
+        :nth-child(3) {
+            text-align: right; 
+        }
+
+    }
+    
+    &__filters {
+        input {
+            margin: 1em;
+        }
+    }
+
+    @media only screen and (max-width: 728px) {
+        ul {
+            padding-right: 2em;
+        }
+
+        &__filters input {
+            display: flex;
+        }
+
+        ul, &__filters {
+            font-size: 12px;
+        }
     }
 }

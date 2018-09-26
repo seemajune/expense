@@ -1,0 +1,13 @@
+<div class="expense__receipts">
+    <div class="expense__receipts__toggler" *ngIf="expense && expense.receipts.length">
+      <button (click)="onToggle()">
+        {{show ? 'hide ' : 'show '}} 
+        {{expense.receipts.length > 1 ? 'receipts' : 'receipt'}}</button>
+    </div>
+    <div class="expense__receipts__images" *ngIf="show">
+      <div *ngFor="let receipt of expense.receipts"
+        class="expense__receipt">
+        <img src="{{backendUrl}}{{receipt.url}}">
+      </div>
+    </div>
+</div>

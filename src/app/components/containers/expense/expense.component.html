@@ -1,4 +1,5 @@
-<app-expense-details [expense]="expense$ | async">
-</app-expense-details>
-<app-expense-editor [expense]="expense$ | async">
-</app-expense-editor>
+<app-expense-details [expense]="expense$ | async"></app-expense-details>
+<app-receipt-images [expense]="expense$ | async"></app-receipt-images>
+<app-comment-editor [expense]="expense$ | async"></app-comment-editor>
+<app-receipt-uploader [expense]="expense$ | async"></app-receipt-uploader>
+

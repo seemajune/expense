@@ -13,7 +13,7 @@ export class ExpenseListComponent {
     @Input() expenses: Expense[];
     @Input() loading: boolean;
     @Input() error: any;
-       
+
     expenseFilter = {
         merchant: '',
         category: '',
@@ -26,8 +26,7 @@ export class ExpenseListComponent {
         }
     }
 
-    constructor(private filterPipe: FilterPipe) { 
-        // console.log(filterPipe.transform(this.expenses, { user: ''}));
+    constructor(private filterPipe: FilterPipe) {
     }
 
 }
